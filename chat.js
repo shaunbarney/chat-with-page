@@ -44,7 +44,7 @@ function removeLoadingMessage(loadingMessage) {
  * Build a prompt for the GPT API.
  */
 function buildPrompt(userMessage, context) {
-  console.log("Context:\n", context);
+  console.log("Building prompt with context:\n", context.slice(0, 200));
   return `
 You are a helpful assistant. The user is viewing a webpage.
 Here is the text content extracted from the page:

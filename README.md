@@ -139,6 +139,11 @@ The *Chat With Page* Chrome Extension allows users to interact with OpenAI's GPT
 
 ---
 
+## TODO:
+- Make the plugin work when you switch tabs and keep it open, you currently have to close and reopen it.
+
+---
+
 ## Contact Information
 
 For support or further inquiries, feel free to reach out:
