@@ -144,12 +144,3 @@ Email: [shaunbarney@outlook.com](mailto:shaunbarney@outlook.com)
 ## License
 This extension is open-source and can be used for educational and personal projects. For commercial use, please contact Dr. Shaun Barney.
 
----
-
-### Key Updates:
-1. Added details about selecting a model in the settings.
-2. Removed instructions about modifying the `chat.js` file manually.
-3. Modernized and clarified the troubleshooting section.
-4. Adjusted installation instructions to include the updated folder structure.
-
-This README now reflects the current functionality and provides clear, actionable steps for users. Let me know if you need further refinements!
