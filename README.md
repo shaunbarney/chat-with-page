@@ -68,15 +68,41 @@ The "Chat With Page" Chrome extension allows users to interact with OpenAI's GPT
 
 ## Using the Extension
 
-### 1. **Launch the Extension**
-- Open any webpage and click the "Chat With Page" icon in your Chrome toolbar.
+### **Overview**
+Here’s how to get started with the *Chat With Page* extension and begin interacting with webpages.
 
-### 2. **Ask Questions**
-- Type a question related to the content of the current webpage in the input box.
-- Click **Send** or press Enter to get a response.
+---
 
-### 3. **Change Model**
-- If needed, open the settings page and select a different model to tailor the responses to your needs.
+### **1. Configure Your Settings**
+- After opening the extension for the first time, click the ⚙️ **Settings** icon in the top-right corner of the side panel.  
+- On the settings page:
+  1. Enter your OpenAI API key.
+  2. Select your preferred OpenAI model from the dropdown menu.
+  3. Click **Save Settings**.  
+
+![Settings Page](./screenshots/settings.png)  
+*The settings page where you can configure your API key and choose the desired model.*
+
+---
+
+### **2. Start Interacting**
+- Close the settings page and the extension side panel.
+- Navigate to any webpage you want to analyze.
+- Open the extension by clicking the *Chat With Page* icon in your Chrome toolbar.
+
+![Main Interface](./screenshots/main.png)  
+*The main interface where you can type questions and receive responses.*
+
+---
+
+### **3. Chat with the Webpage**
+- Type a question related to the content of the webpage in the input box.  
+- Click **Send** or press Enter to submit your query.  
+- The extension will analyze the text content of the webpage and generate a response using your selected OpenAI model.
+
+---
+
+With these steps, you're ready to explore and interact with any webpage using the power of OpenAI!
 
 ---
 
@@ -111,7 +137,7 @@ The "Chat With Page" Chrome extension allows users to interact with OpenAI's GPT
 For support or further inquiries, feel free to reach out:
 
 **Dr. Shaun Barney**  
-Email: [shaun.barney@kyndryl.com](mailto:shaun.barney@kyndryl.com)
+Email: [shaunbarney@outlook.com](mailto:shaunbarney@outlook.com)
 
 ---
 
