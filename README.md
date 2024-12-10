@@ -138,9 +138,3 @@ For support or further inquiries, feel free to reach out:
 
 **Dr. Shaun Barney**  
 Email: [shaunbarney@outlook.com](mailto:shaunbarney@outlook.com)
-
----
-
-## License
-This extension is open-source and can be used for educational and personal projects. For commercial use, please contact Dr. Shaun Barney.
-
