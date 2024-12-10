@@ -1,0 +1,140 @@
+:root {
+  --background-color: #121212; /* Main background */
+  --text-color: #E0E0E0;       /* General text */
+  --user-bubble-color: #1E90FF; /* User message bubble (Dodger Blue) */
+  --user-text-color: #FFFFFF;  /* User text */
+  --bot-bubble-color: #444444; /* Bot message bubble (Dark Gray) */
+  --bot-text-color: #FFFFFF;   /* Bot text */
+  --input-background: #1A1A1A; /* Input background */
+  --input-border: #555555;     /* Input border */
+  --accent-color: #FF5733;     /* Accent color (Vibrant Orange) */
+  --spinner-color: #FF5733;    /* Spinner color */
+  --spinner-border: #444444;   /* Spinner border color */
+  --cog-color: #FFD700;        /* Cog icon color (Gold) */
+  --cog-hover-color: #FFA500;  /* Cog hover color (Bright Orange) */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chat-header {
+  background-color: var(--accent-color);
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--background-color);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  max-width: 70%; /* Limit bubble width */
+  padding: 10px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.message.user {
+  align-self: flex-end; /* Align user messages to the right */
+  background-color: var(--user-bubble-color);
+  color: var(--user-text-color);
+}
+
+.message.bot {
+  align-self: flex-start; /* Align bot messages to the left */
+  background-color: var(--bot-bubble-color);
+  color: var(--bot-text-color);
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background-color: var(--background-color);
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.chat-input button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: var(--user-bubble-color);
+  color: var(--background-color);
+}
+
+/* Spinner Styling */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--spinner-border); /* Outer border */
+  border-top: 2px solid var(--spinner-color); /* Accent border */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cog Icon */
+.settings-cog {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: var(--cog-color);
+  text-decoration: none; /* Remove underline */
+}
+
+.settings-cog:hover {
+  color: var(--cog-hover-color);
+}

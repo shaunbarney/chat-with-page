@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="settingStyles.css">
+  <title>Settings</title>
+</head>
+<body>
+  <div id="settings">
+    <h2>Configure Your OpenAI Settings</h2>
+    
+    <!-- API Key Input -->
+    <label for="apiKey">Enter your API Key:</label>
+    <input type="password" id="apiKey" placeholder="sk-xxxxxxxxxxxxxxxxxx">
+    
+    <!-- Model Selection -->
+    <label for="modelSelect">Choose OpenAI Model:</label>
+    <select id="modelSelect">
+      <option value="gpt-4">GPT-4</option>
+      <option value="gpt-4-turbo">GPT-4 Turbo</option>
+      <option value="gpt-4o">GPT-4 Omega</option>
+      <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+    </select>
+
+    <!-- Save Button -->
+    <button id="saveKey">Save</button>
+    <p id="status"></p>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

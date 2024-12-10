@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat With Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="libs/marked.min.js"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Chat Header with Cog Icon -->
+    <div class="chat-header">
+      <h1>Chat</h1>
+      <a href="settings.html" target="_blank" class="settings-cog" title="Configure API Key">⚙️</a>
+    </div>
+
+    <!-- Chat Messages Section -->
+    <div class="chat-messages" id="chatMessages">
+      <!-- Messages will dynamically appear here -->
+    </div>
+
+    <!-- Chat Input Section -->
+    <div class="chat-input">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Type your message..."
+        autocomplete="off"
+      />
+      <button id="sendButton">Send</button>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>

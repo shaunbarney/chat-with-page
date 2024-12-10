@@ -1,0 +1,103 @@
+/* Root Variables */
+:root {
+  --background-color: #121212; /* Main background */
+  --card-background: #1E1E1E; /* Card background */
+  --input-background: #2A2A2A; /* Input background */
+  --input-border: #555555;     /* Input border */
+  --text-color: #E0E0E0;       /* General text */
+  --accent-color: #FF5733;     /* Accent color (Vibrant Orange) */
+  --button-hover: #FF7849;     /* Button hover color */
+  --error-color: #FF3333;      /* Error text color */
+  --success-color: #4CAF50;    /* Success text color */
+}
+
+/* Body Styling */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Settings Card */
+#settings {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+#settings h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+#settings label {
+  display: block;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: left;
+}
+
+/* Input Fields */
+#settings input[type="password"],
+#settings select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+#settings input:focus,
+#settings select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Save Button */
+#settings button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#settings button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Status Message */
+#settings #status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+#settings #status.success {
+  color: var(--success-color);
+}
+
+#settings #status.error {
+  color: var(--error-color);
+}
