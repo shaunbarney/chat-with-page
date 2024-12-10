@@ -1,12 +1,24 @@
-// Ensure the script is only executed once
-if (!window.hasInjectedPageHTML) {
-  window.hasInjectedPageHTML = true;
+// Ensure the script is executed on initial load and dynamic URL changes
+if (!window.contentScriptInjected) {
+  window.contentScriptInjected = true;
 
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    attemptToSendMainText();
-  } else {
-    document.addEventListener('DOMContentLoaded', attemptToSendMainText);
-  }
+  injectContentMonitoring();
+}
+
+function injectContentMonitoring() {
+  // Extract the text content on initial page load
+  attemptToSendMainText();
+
+  // Monitor for SPA navigation changes
+  let lastUrl = location.href;
+  new MutationObserver(() => {
+    const currentUrl = location.href;
+    if (currentUrl !== lastUrl) {
+      console.log("Detected URL change. Reinjecting content...");
+      lastUrl = currentUrl;
+      attemptToSendMainText();
+    }
+  }).observe(document.body, { childList: true, subtree: true });
 }
 
 function attemptToSendMainText(retryCount = 0) {
@@ -19,7 +31,7 @@ function attemptToSendMainText(retryCount = 0) {
   }
 
   // Extract visible text content only
-  let mainText = extractVisibleText(mainElement);
+  const mainText = extractVisibleText(mainElement);
 
   // Retry mechanism for dynamically loaded content
   if (!mainText && retryCount < 3) {

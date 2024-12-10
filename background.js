@@ -1,37 +1,38 @@
-// background.js
-
 console.log('Background script loaded start');
 
+// Set up the extension on installation
 chrome.runtime.onInstalled.addListener(() => {
   console.log("onInstalled event triggered");
-  // Keep the side panel automatic opening
-  chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
-  console.log("Side panel behaviour set to open automatically");
-});
 
+  // Ensure the side panel opens automatically when the extension icon is clicked
+  chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
+  console.log("Side panel behavior set to open automatically");
+});
 
 // Listen for messages from chat.js requesting the page HTML
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "getPageHTML") {
     console.log("Received request to get page HTML");
-    // Get the currently active tab to inject the script into it
+
+    // Query the active tab
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0];
+
       if (!activeTab || !activeTab.id) {
-        console.log("No valid active tab found");
+        console.error("No valid active tab found");
         sendResponse({ error: "No active tab found" });
         return;
       }
 
       console.log("Injecting content script into tab:", activeTab.id);
+
+      // Inject content.js into the active tab
       chrome.scripting.executeScript({
         target: { tabId: activeTab.id },
         files: ['content.js']
       }).then(() => {
         console.log("Content script injected successfully");
-        // The response will be sent once content.js sends the HTML back
-        // We'll wait for that in another listener below or we can rely on 
-        // content.js sending a message directly to chat.js.
+        sendResponse({ success: true });
       }).catch((error) => {
         console.error("Error injecting content script:", error);
         sendResponse({ error: error.message });
@@ -41,6 +42,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     // Indicate we will send a response asynchronously
     return true;
   }
+
+  console.warn("Unknown request action received:", request.action);
 });
 
 console.log('Background script loaded end');
