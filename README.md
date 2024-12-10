@@ -2,7 +2,6 @@
 
 <div align="center">
   <img src="./imgs/main.png" alt="Chat With Page Extension" style="max-width:100%; height:auto;" />
-  <h3>Version: 1.0.0</h3>
   <p>
     <strong>Release Date:</strong> December 2024<br>
     <strong>Developed by:</strong> Dr. Shaun Barney
