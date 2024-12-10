@@ -1,14 +1,29 @@
 # Chat With Page Chrome Extension
 
+<div align="center">
+  <img src="./imgs/main.png" alt="Chat With Page Extension" style="max-width:100%; height:auto;" />
+  <h3>Version: 1.0.0</h3>
+  <p>
+    <strong>Release Date:</strong> December 2024<br>
+    <strong>Developed by:</strong> Dr. Shaun Barney
+  </p>
+</div>
+
+---
+
 ## Overview
-The "Chat With Page" Chrome extension allows users to interact with OpenAI's GPT models, providing insightful responses based on the content of the webpage they are viewing. With this extension, you can ask contextual questions or request explanations, all directly from your browser.
+The *Chat With Page* Chrome Extension allows users to interact with OpenAI's GPT models, providing insightful responses based on the content of the webpage they are viewing. With this extension, you can ask contextual questions or request explanations, all directly from your browser.
 
 ---
 
 ## Features
 - Analyze the content of a webpage and get contextual answers.
 - Integrate seamlessly with OpenAI's GPT API for intelligent responses.
-- Choose from multiple OpenAI models to tailor the response style and cost.
+- Choose from multiple OpenAI models to tailor the response style and cost:
+  - **GPT-4**
+  - **GPT-4 Turbo**
+  - **GPT-4 Omega**
+  - **GPT-3.5 Turbo**
 - Simple and intuitive user interface for easy interaction.
 
 ---
@@ -29,6 +44,9 @@ The "Chat With Page" Chrome extension allows users to interact with OpenAI's GPT
     │   └── marked.min.js
     ├── icons/
     │   └── icon.png
+    ├── imgs/
+    │   ├── main.png
+    │   ├── settings.png
   ```
 
 ### 2. **Enable Developer Mode in Chrome**
@@ -59,50 +77,42 @@ The "Chat With Page" Chrome extension allows users to interact with OpenAI's GPT
 - Make sure your OpenAI account has funds available for API usage. The API charges based on the number of tokens processed in a request/response.
 
 ### 4. **Add Your API Key and Select a Model**
-1. Click the **⚙️ Settings** cog in the extension panel.
+1. Open the extension and click the **⚙️ Settings** icon in the top-right corner.
 2. Enter your OpenAI API key in the provided input field.
-3. Choose a model from the dropdown menu (e.g., `gpt-4`, `gpt-3.5-turbo`).
-4. Click **Save Settings**. Your key and model selection will be securely saved for future use.
+3. Select one of the available models from the dropdown menu:
+   - GPT-4
+   - GPT-4 Turbo
+   - GPT-4 Omega
+   - GPT-3.5 Turbo
+4. Click **Save Settings**. Your key and model selection will be securely stored.
 
 ---
 
 ## Using the Extension
 
-### **Overview**
-Here’s how to get started with the *Chat With Page* extension and begin interacting with webpages.
-
----
-
 ### **1. Configure Your Settings**
-- After opening the extension for the first time, click the ⚙️ **Settings** icon in the top-right corner of the side panel.  
-- On the settings page:
-  1. Enter your OpenAI API key.
-  2. Select your preferred OpenAI model from the dropdown menu.
-  3. Click **Save Settings**.  
+- Open the extension, and click the ⚙️ **Settings** icon in the top-right corner.  
+- Configure your OpenAI API key and select the desired model.
 
-![Settings Page](./screenshots/settings.png)  
+![Settings Page](./imgs/settings.png)  
 *The settings page where you can configure your API key and choose the desired model.*
 
 ---
 
 ### **2. Start Interacting**
-- Close the settings page and the extension side panel.
+- Close the settings page and side panel.
 - Navigate to any webpage you want to analyze.
 - Open the extension by clicking the *Chat With Page* icon in your Chrome toolbar.
 
-![Main Interface](./screenshots/main.png)  
+![Main Interface](./imgs/main.png)  
 *The main interface where you can type questions and receive responses.*
 
 ---
 
 ### **3. Chat with the Webpage**
-- Type a question related to the content of the webpage in the input box.  
+- Type a question related to the webpage content in the input box.  
 - Click **Send** or press Enter to submit your query.  
 - The extension will analyze the text content of the webpage and generate a response using your selected OpenAI model.
-
----
-
-With these steps, you're ready to explore and interact with any webpage using the power of OpenAI!
 
 ---
 
@@ -115,21 +125,19 @@ With these steps, you're ready to explore and interact with any webpage using th
 
 2. **Error: "Marked.js is not available"**
    - Verify the `marked.min.js` file is included in the `libs/` folder.
-   - Confirm `marked.min.js` is correctly referenced in `sidepanel.html`:
-     ```html
-     <script src="libs/marked.min.js"></script>
-     ```
+   - Confirm `marked.min.js` is correctly referenced in `sidepanel.html`.
 
 3. **Extension Not Loading**
    - Ensure you are using Chrome and have enabled Developer Mode.
    - Check for errors in Chrome’s Developer Tools console (Ctrl+Shift+I or Cmd+Opt+I).
 
 4. **Invalid Model Error**
-   - Ensure you’ve selected a valid model in the settings. Available models include:
-     - `gpt-4`
-     - `gpt-4-turbo`
-     - `gpt-4o`
-     - `gpt-3.5-turbo`
+   - Ensure you’ve selected a valid model in the settings:
+     - GPT-4
+     - GPT-4 Turbo
+     - GPT-4 Omega
+     - GPT-3.5 Turbo
+
 ---
 
 ## Contact Information
@@ -138,3 +146,8 @@ For support or further inquiries, feel free to reach out:
 
 **Dr. Shaun Barney**  
 Email: [shaunbarney@outlook.com](mailto:shaunbarney@outlook.com)
+
+---
+
+## License
+This extension is released under the [MIT License](./LICENSE).
